@@ -22,7 +22,15 @@ $(document).ready(function() {
     var movie = parseInt($("#movie").val());
 
     var results = color + season + meal + movie;
-    console.log(results);
-    console.log(which(results));
-  })
-})
+    var character = which(results);
+
+
+    var newHtml = `
+      <h1 class="result-shout">YOU ARE ${character.toUpperCase()}!!!</h1>
+      <img src="img/${character}.jpg" alt="${character}">
+      `;
+    $(".wrapper").text('');
+    $(".wrapper").append(newHtml);
+
+  });
+});
